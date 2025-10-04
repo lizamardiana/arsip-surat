@@ -46,7 +46,7 @@ class SuratMasukController extends Controller
             'file_upload' => $fileName,
         ]);
 
-        return redirect()->route('suratmasuk.index')->with('success', 'Surat berhasil ditambahkan!');
+        return redirect()->route('suratmasuk')->with('success', 'Surat berhasil ditambahkan!');
     }
 
 
@@ -88,7 +88,7 @@ class SuratMasukController extends Controller
             'file_upload' => $fileName,
         ]);
 
-        return redirect()->route('suratmasuk.index')->with('success', 'Surat berhasil diperbarui!');
+        return redirect()->route('suratmasuk')->with('success', 'Surat berhasil diperbarui!');
     }
 
     public function destroy($id)
@@ -101,6 +101,6 @@ class SuratMasukController extends Controller
 
         $surat->delete();
 
-        return redirect()->route('suratmasuk.index')->with('success', 'Surat berhasil dihapus!');
+        return redirect()->route('suratmasuk')->with('success', 'Surat berhasil dihapus!');
     }
 }
