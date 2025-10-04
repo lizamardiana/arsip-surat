@@ -57,6 +57,9 @@
             margin-top: 56px;
             padding: 25px;
         }
+        .btn-close {
+            filter: invert(1); /* ubah warna hitam jadi putih */
+        }
         @media (max-width: 991px) {
             .content {
                 margin-left: 0;
@@ -121,8 +124,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('suratkeluar') ? 'active' : '' }}" href="{{ route('suratkeluar') }}">
-                    <i class="bi bi-envelope-arrow-up-fill"></i> Surat Keluar
+                <a class="nav-link {{ request()->routeIs('suratkeluar.index') ? 'active' : '' }}" href="{{ route('suratkeluar.index') }}">
+                    <i class="bi bi-envelope-open-fill"></i> Surat Keluar
                 </a>
             </li>
             <li class="nav-item">
@@ -152,7 +155,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white {{ request()->routeIs('suratkeluar') ? 'active' : '' }}" href="{{ route('suratkeluar') }}">
+                    <a class="nav-link text-white {{ request()->routeIs('suratkeluar.index') ? 'active' : '' }}" href="{{ route('suratkeluar.index') }}">
                         Surat Keluar
                     </a>
                 </li>
