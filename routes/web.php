@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuratMasukController;
+use App\Http\Controllers\SuratKeluarController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -20,14 +21,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-// Surat Masuk
-Route::get('/suratmasuk', [SuratMasukController::class, 'index'])->name('suratmasuk.index');
-Route::post('/suratmasuk/store', [SuratMasukController::class, 'store'])->name('suratmasuk.store');
 
-// Surat Keluar
-Route::get('/suratkeluar', function () {
-    return view('suratkeluar');
-})->name('suratkeluar');
 
 // Laporan
 Route::get('/laporan', function () {
@@ -40,3 +34,10 @@ Route::post('/suratmasuk/store', [SuratMasukController::class, 'store'])->name('
 Route::get('/suratmasuk/{id}/edit', [SuratMasukController::class, 'edit'])->name('suratmasuk.edit');
 Route::put('/suratmasuk/{id}', [SuratMasukController::class, 'update'])->name('suratmasuk.update');
 Route::delete('/suratmasuk/{id}', [SuratMasukController::class, 'destroy'])->name('suratmasuk.destroy');
+
+// Surat Keluar
+Route::get('/suratkeluar', [SuratKeluarController::class, 'index'])->name('suratkeluar.index');
+Route::post('/suratkeluar/store', [SuratKeluarController::class, 'store'])->name('suratkeluar.store');
+Route::get('/suratkeluar/{id}/edit', [SuratKeluarController::class, 'edit'])->name('suratkeluar.edit');
+Route::put('/suratkeluar/{id}', [SuratKeluarController::class, 'update'])->name('suratkeluar.update');
+Route::delete('/suratkeluar/{id}', [SuratKeluarController::class, 'destroy'])->name('suratkeluar.destroy');
